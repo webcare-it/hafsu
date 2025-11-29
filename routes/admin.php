@@ -25,6 +25,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
     Route::get('/categories/edit/{id}', 'CategoryController@edit')->name('categories.edit');
     Route::get('/categories/destroy/{id}', 'CategoryController@destroy')->name('categories.destroy');
     Route::post('/categories/featured', 'CategoryController@updateFeatured')->name('categories.featured');
+    Route::post('/bulk-category-delete', 'CategoryController@bulk_delete')->name('categories.bulk-delete');
 
     Route::resource('brands', 'BrandController');
     Route::get('/brands/edit/{id}', 'BrandController@edit')->name('brands.edit');
